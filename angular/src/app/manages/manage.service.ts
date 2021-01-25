@@ -5,9 +5,10 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class ManageService {
-  private baseUrl = "http://127.0.0.1:8000/api/manages";
+  private baseUrl = "http://127.0.0.1:8001/api/manages";
   constructor(private http: HttpClient) { }
 
+  // tslint:disable-next-line:typedef
   getManageList(){
     return this.http.get(`${this.baseUrl}`);
   }

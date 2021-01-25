@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th1 22, 2021 lúc 09:03 PM
+-- Thời gian đã tạo: Th1 23, 2021 lúc 11:02 AM
 -- Phiên bản máy phục vụ: 8.0.23
 -- Phiên bản PHP: 7.4.3
 
@@ -62,9 +62,11 @@ CREATE TABLE `football_players` (
 
 CREATE TABLE `manages` (
   `id` int UNSIGNED NOT NULL,
-  `company_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `manage_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `company_manage` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `team_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `schedule_id` int UNSIGNED DEFAULT NULL,
+  `football_id` int UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -91,7 +93,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2021_01_22_131915_create_manages_table', 1),
 (5, '2021_01_22_132111_create_football_players_table', 1),
-(6, '2021_01_22_133545_create_schedules_table', 1);
+(6, '2021_01_22_133545_create_schedules_table', 1),
+(7, '2021_01_23_034755_add_schedules_to_manages_table', 2),
+(8, '2021_01_23_035438_add_football_player_to_manages_table', 3);
 
 -- --------------------------------------------------------
 
@@ -158,7 +162,9 @@ ALTER TABLE `football_players`
 -- Chỉ mục cho bảng `manages`
 --
 ALTER TABLE `manages`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `manages_schedule_id_foreign` (`schedule_id`),
+  ADD KEY `manages_football_id_foreign` (`football_id`);
 
 --
 -- Chỉ mục cho bảng `migrations`
@@ -211,7 +217,7 @@ ALTER TABLE `manages`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `schedules`
@@ -224,6 +230,17 @@ ALTER TABLE `schedules`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `manages`
+--
+ALTER TABLE `manages`
+  ADD CONSTRAINT `manages_football_id_foreign` FOREIGN KEY (`football_id`) REFERENCES `football_players` (`id`),
+  ADD CONSTRAINT `manages_schedule_id_foreign` FOREIGN KEY (`schedule_id`) REFERENCES `schedules` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
