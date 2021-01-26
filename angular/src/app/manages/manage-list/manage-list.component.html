@@ -21,8 +21,8 @@
       <td>{{manages.company_manage}}</td>
       <td>{{manages.team_name}}</td>
       <td>{{manages.address}}</td>
-      <td><a routerLink="edit/{{manages.id}}" routerLinkActive="active">edit</a>
-         <button (click)="deleteManage(manages.id)">delete</button></td> 
+      <td><a class="btn btn-warning" routerLink="edit/{{manages.id}}" routerLinkActive="active">edit</a>
+         <button class="btn btn-danger" (click)="deleteManage(manages.id)">delete</button></td>
     </tr>
   </table>
 </div>
