@@ -9,11 +9,14 @@ import { CreateManageComponent } from './manages/create-manage/create-manage.com
 import { UpdateManageComponent } from './manages/update-manage/update-manage.component';
 
 
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ScheduleListComponent } from './schedule/schedule-list/schedule-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateScheduleComponent } from './schedule/create-schedule/create-schedule.component';
 import { UpdateScheduleComponent } from './schedule/update-schedule/update-schedule.component';
+import { LoginComponent } from './login/login.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 
@@ -28,14 +31,17 @@ import { UpdateScheduleComponent } from './schedule/update-schedule/update-sched
     ScheduleListComponent,
     CreateScheduleComponent,
     UpdateScheduleComponent,
+    LoginComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        ToastrModule.forRoot(),
+        ReactiveFormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

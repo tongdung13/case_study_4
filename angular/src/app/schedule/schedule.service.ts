@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class ScheduleService {
-  private baseUrl = 'http://127.0.0.1:8001/api/schedules';
+  private baseUrl = 'http://127.0.0.1:8000/api/schedules';
   constructor(private http: HttpClient) { }
   // tslint:disable-next-line:typedef
   getScheduleList(){

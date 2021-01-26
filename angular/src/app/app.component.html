@@ -1,8 +1,39 @@
 
-<a routerLink="manage" routerLinkActive="active">ManageList</a>
-<a routerLink="add" routerLinkActive="active">add new</a>
+<a routerLink="login" class="nav-link" routerLinkActive="active">LOGIN</a>
 
-<a routerLink="schedules" routerLinkActive="active">SchedulesList</a><br>
-<a routerLink="adda" routerLinkActive="active">add new schedules</a>
-<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-sm  navbar-dark">
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a routerLink="manage" routerLinkActive="active"> ManageList | </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="add" routerLinkActive="active"> ADD Manage | </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="schedules" routerLinkActive="active"> SchedulesList | </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="adda" routerLinkActive="active"> add new schedules </a>
+        </li>
+<!--        <li class="nav-item" >-->
+<!--            <a routerLink="login" class="nav-link" routerLinkActive="active">LOGIN</a>-->
+<!--        </li>-->
+    </ul>
+</nav>
+<div class="container">
+    <br>
+    <h2 style="text-align: center;">{{title}}</h2>
+    <hr>
+    <div class="card">
+        <div class="card-body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
 
+<footer class="footer">
+    <div class="container">
+        <span>All Rights Reserved 2020 @Codegym</span>
+    </div>
+</footer>
