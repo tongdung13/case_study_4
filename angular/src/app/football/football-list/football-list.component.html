@@ -23,7 +23,7 @@
         <td>{{ football.gender }}</td>
         <td>{{ football.image }}</td>
         <td>
-          <a routerLink="updateFootball/{{ football.id }}" class="btn btn-sm btn-primary">Sửa</a>
+          <a href="updateFootball/{{ football.id }}" class="btn btn-sm btn-primary">Sửa</a>
           <a routerLink="showFootball/{{ football.id }}" class="btn btn-sm btn-success">Chi Tiết</a>
           <button (click)="deleteFootball(football.id)" class="btn btn-sm btn-danger">Xóa</button>
         </td>

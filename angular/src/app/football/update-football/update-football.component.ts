@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Football } from '../football';
 import { FootballService } from '../football.service';
 
 @Component({
@@ -9,8 +10,8 @@ import { FootballService } from '../football.service';
 })
 export class UpdateFootballComponent implements OnInit {
 
-  football: any;
-  id: any;
+  football!: any;
+  id!: any;
   constructor(private service: FootballService,
               private router: Router,
               private route: ActivatedRoute) { }
@@ -18,7 +19,7 @@ export class UpdateFootballComponent implements OnInit {
   ngOnInit(): void {
       this.id = this.route.snapshot.params['id'];
 
-      this.football = new this.football();
+      this.football = new Football();
 
       this.service.showFootball(this.id).subscribe(
         data => {
