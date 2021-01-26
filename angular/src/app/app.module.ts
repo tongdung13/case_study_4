@@ -16,6 +16,12 @@ import {HttpClientModule} from '@angular/common/http';
 import { CreateScheduleComponent } from './schedule/create-schedule/create-schedule.component';
 import { UpdateScheduleComponent } from './schedule/update-schedule/update-schedule.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+import { AngularFireModule} from '@angular/fire'
+import { AngularFireStorageModule} from '@angular/fire/storage'
+import { AngularFirestore} from '@angular/fire/firestore'
+import { from } from 'rxjs';
+import { DropzoneDirective } from './dropzone.directive';
 
 
 
@@ -34,6 +40,7 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
     CreateScheduleComponent,
     UpdateScheduleComponent,
     NavbarComponent,
+    DropzoneDirective,
 
 
   ],
@@ -42,8 +49,23 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularFileUploaderModule,
+    AngularFireModule.initializeApp(
+      {
+        apiKey: "AIzaSyDathM3nYJlIRIwaufYkkyfcBuQ7F9YO0U",
+        authDomain: "case-study-4.firebaseapp.com",
+        databaseURL: "https://case-study-4-default-rtdb.firebaseio.com",
+        projectId: "case-study-4",
+        storageBucket: "case-study-4.appspot.com",
+        messagingSenderId: "957175901836",
+        appId: "1:957175901836:web:508761c183b2cfecd095a9",
+        measurementId: "G-2XGZ9FNXD9"
+      }
+    ),
+    AngularFireStorageModule,
+
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
