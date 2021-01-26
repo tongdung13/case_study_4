@@ -1,5 +1,4 @@
 <div class="container">
-  <a routerLink="addFootball" class="btn btn-sm btn-primary">Thêm Mới</a>
   <table class="table">
     <thead>
       <tr>
@@ -10,7 +9,7 @@
         <th>Tiểu Sử</th>
         <th>Giới Tính</th>
         <th>Hình Ảnh</th>
-        <th>Hành Động</th>
+        <th>Thao Tác</th>
       </tr>
     </thead>
     <tbody>
@@ -23,9 +22,9 @@
         <td>{{ football.gender }}</td>
         <td>{{ football.image }}</td>
         <td>
-          <a href="updateFootball/{{ football.id }}" class="btn btn-sm btn-primary">Sửa</a>
-          <a routerLink="showFootball/{{ football.id }}" class="btn btn-sm btn-success">Chi Tiết</a>
-          <button (click)="deleteFootball(football.id)" class="btn btn-sm btn-danger">Xóa</button>
+          <a href="updateFootball/{{ football.id }}"class="btn btn-warning">Sửa</a>
+          <a routerLink="showFootball/{{ football.id }}" class="btn btn-success">Chi Tiết</a>
+          <button (click)="deleteFootball(football.id)" class="btn btn-danger">Xóa</button>
         </td>
       </tr>
     </tbody>
