@@ -1,0 +1,33 @@
+<div class="container">
+  <a routerLink="createFootball" class="btn btn-sm btn-primary">Thêm Mới</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Tên Cầu Thủ</th>
+        <th>Chiều Cao</th>
+        <th>Cân Nặng</th>
+        <th>Địa Chỉ</th>
+        <th>Tiểu Sử</th>
+        <th>Giới Tính</th>
+        <th>Hình Ảnh</th>
+        <th>Hành Động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let football of footballs">
+        <td>{{ football.name }}</td>
+        <td>{{ football.height }}</td>
+        <td>{{ football.weight }}</td>
+        <td>{{ football.address }}</td>
+        <td>{{ football.story }}</td>
+        <td>{{ football.gender }}</td>
+        <td>{{ football.image }}</td>
+        <td>
+          <a routerLink="updateFootball/{{ football.id }}" class="btn btn-sm btn-primary">Sửa</a>
+          <a routerLink="showFootball/{{ football.id }}" class="btn btn-sm btn-success">Chi Tiết</a>
+          <button (click)="deleteFootball(football.id)" class="btn btn-sm btn-danger">Xóa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

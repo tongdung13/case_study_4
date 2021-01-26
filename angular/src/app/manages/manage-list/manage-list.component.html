@@ -11,18 +11,19 @@
 </head>
 <body>
 <div class="container">
+
   <table class="table">
     <tr>
-      <th>company manage</th>
-      <th>name</th>
-      <th>address</th>
+      <th>Tên Công Ty</th>
+      <th>Tên Quản Lý</th>
+      <th>Địa Chỉ Công Ty</th>
     </tr>
     <tr *ngFor = "let manages of manages">
       <td>{{manages.company_manage}}</td>
       <td>{{manages.team_name}}</td>
       <td>{{manages.address}}</td>
-      <td><a routerLink="edit/{{manages.id}}" routerLinkActive="active">edit</a>
-         <button (click)="deleteManage(manages.id)">delete</button></td> 
+      <td><a routerLink="manage/edit/{{manages.id}}" routerLinkActive="active" class="btn btn-sm btn-primary">Sửa</a>
+         <button (click)="deleteManage(manages.id)" class="btn btn-sm btn-danger">Xóa</button></td>
     </tr>
   </table>
 </div>

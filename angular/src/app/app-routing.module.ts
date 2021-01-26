@@ -9,14 +9,22 @@ import { ManageListComponent } from './manages/manage-list/manage-list.component
 import {ScheduleListComponent} from './schedule/schedule-list/schedule-list.component';
 import {CreateScheduleComponent} from './schedule/create-schedule/create-schedule.component';
 import {UpdateScheduleComponent} from './schedule/update-schedule/update-schedule.component';
+import { FootballListComponent } from './football/football-list/football-list.component';
+import { CreateFootballComponent } from './football/create-football/create-football.component';
+import { UpdateFootballComponent } from './football/update-football/update-football.component';
+import { FootballDetailsComponent } from './football/football-details/football-details.component';
 
 const routes: Routes = [
-  { path: 'manage', component: ManageListComponent},
+  { path: '', component: ManageListComponent, pathMatch: 'full'},
   { path: 'manage/edit/:id', component: UpdateManageComponent},
   { path: 'add', component: CreateManageComponent},
   {path: 'schedules', component: ScheduleListComponent},
   {path: 'adda' , component: CreateScheduleComponent},
   {path: 'schedules/edit/:id', component: UpdateScheduleComponent},
+  { path: 'footballList', component: FootballListComponent},
+  { path: 'createFootball', component: CreateFootballComponent},
+  { path: 'updateFootball/:id', component: UpdateFootballComponent},
+  { path: 'showFootball/:id', component: FootballDetailsComponent}
 
 ];
 
