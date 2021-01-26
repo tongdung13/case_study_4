@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FootballService {
 
-  private baseUrl = 'http://locahost:8000/api/football';
+  private baseUrl = 'http://localhost:8000/api/football';
   constructor(private http: HttpClient) { }
 
   getAll()
