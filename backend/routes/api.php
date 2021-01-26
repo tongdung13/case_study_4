@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FootballPlayerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'football'], function () {
+    Route::get('', [FootballPlayerController::class, 'index']);
+    Route::post('', [FootballPlayerController::class, 'store']);
+    Route::get('/show/{id}', [FootballPlayerController::class, 'show']);
+    Route::put('/update/{id}', [FootballPlayerController::class, 'update']);
+    Route::delete('/{id}', [FootballPlayerController::class, 'destroy']);
 });
+
+
