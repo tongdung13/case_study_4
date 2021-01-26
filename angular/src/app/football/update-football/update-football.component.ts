@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FootballService } from '../football.service';
 
 @Component({
   selector: 'app-update-football',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateFootballComponent implements OnInit {
 
-  constructor() { }
+  football: any;
+  id: any;
+  constructor(private service: FootballService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+      this.id = this.route.snapshot.params['id'];
+
+      this.football = new this.football();
+
+      this.service.showFootball(this.id).subscribe(
+        data => {
+          this.football = data;
+        }, error => console.log(error)
+      )
   }
 
+  editFootball()
+  {
+    this.service.updateFootball(this.id, this.football).subscribe(
+      data => {
+        console.log(data);
+        this.router.navigate(['football']);
+      }, error => console.log(error)
+    )
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FootballService } from '../football.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class FootballListComponent implements OnInit {
 
   footballs: any;
   constructor(private footballService: FootballService,
-              ) { }
+              private router: Router) { }
 
   ngOnInit(): void {
     this.loadData();

@@ -21,8 +21,8 @@ const routes: Routes = [
   {path: 'schedules', component: ScheduleListComponent},
   {path: 'adda' , component: CreateScheduleComponent},
   {path: 'schedules/edit/:id', component: UpdateScheduleComponent},
-  { path: 'footballList', component: FootballListComponent},
-  { path: 'createFootball', component: CreateFootballComponent},
+  { path: 'football', component: FootballListComponent},
+  { path: 'addFootball', component: CreateFootballComponent},
   { path: 'updateFootball/:id', component: UpdateFootballComponent},
   { path: 'showFootball/:id', component: FootballDetailsComponent}
 
