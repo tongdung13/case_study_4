@@ -13,6 +13,7 @@
       <div class="container">
         <form>
             <div class="form-group">
+
               <label for="exampleFormControlInput1">Công ty quản lý</label>
               <input type="text" class="form-control" name="company_manage" [(ngModel)]="manage.company_manage">
             </div>
@@ -22,9 +23,12 @@
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1">Địa Chỉ</label>
+
+
+            
               <input type="text" class="form-control" name="address" [(ngModel)]="manage.address">
             </div>
-            <button (click)="addManage()">add</button>
+            <button (click)="addManage()">Add</button>
           </form>
       </div>
     <!-- Optional JavaScript -->

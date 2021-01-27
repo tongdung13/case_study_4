@@ -3,19 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { FootballListComponent } from './football/football-list/football-list.component';
+import { FootballDetailsComponent } from './football/football-details/football-details.component';
+import { CreateFootballComponent } from './football/create-football/create-football.component';
+import { UpdateFootballComponent } from './football/update-football/update-football.component';
 import { ManageListComponent } from './manages/manage-list/manage-list.component';
 import { CreateManageComponent } from './manages/create-manage/create-manage.component';
 import { UpdateManageComponent } from './manages/update-manage/update-manage.component';
 
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { ScheduleListComponent } from './schedule/schedule-list/schedule-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateScheduleComponent } from './schedule/create-schedule/create-schedule.component';
 import { UpdateScheduleComponent } from './schedule/update-schedule/update-schedule.component';
+
 import { LoginComponent } from './login/login.component';
-import { ToastrModule } from 'ngx-toastr';
+
+import { NavbarComponent } from './navbar/navbar/navbar.component';
+import { DropzoneDirective } from './dropzone.directive';
 
 
 
@@ -24,14 +31,20 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     AppComponent,
 
+    FootballListComponent,
+    FootballDetailsComponent,
+    CreateFootballComponent,
+    UpdateFootballComponent,
     ManageListComponent,
     CreateManageComponent,
     UpdateManageComponent,
-
     ScheduleListComponent,
     CreateScheduleComponent,
     UpdateScheduleComponent,
     LoginComponent,
+    NavbarComponent,
+    DropzoneDirective,
+
 
   ],
     imports: [
@@ -39,7 +52,6 @@ import { ToastrModule } from 'ngx-toastr';
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
-        ToastrModule.forRoot(),
         ReactiveFormsModule,
     ],
   providers: [],

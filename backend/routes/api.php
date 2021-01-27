@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\FootballPlayerController;
 use App\Http\Controllers\ScheduleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,30 +17,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/register', [\App\Http\Controllers\UserController::class, 'register']);
+Route::post('/login', [\App\Http\Controllers\UserController::class, 'authenticate']);
 
-
-
-Route::prefix('schedules')->group(function(){
-    Route::get('',[ScheduleController::class ,'index']);
-    Route::post('/',[ScheduleController::class , 'store']);
-    Route::put('/{id}',[ScheduleController::class , 'update']);
-    Route::get('/{id}',[ScheduleController::class ,'show']);
-    Route::delete('/{id}',[ScheduleController::class ,'destroy']);
+Route::group(['middleware' => ['jwt.verify']], function () {
+    Route::get('/user', [\App\Http\Controllers\UserController::class, 'getAuthenticatedUser']);
+    Route::prefix('manages')->group(function () {
+        Route::get('/', [\App\Http\Controllers\ManagesController::class, 'index']);
+        Route::post('/', [\App\Http\Controllers\ManagesController::class, 'store']);
+        Route::put('/{id}', [\App\Http\Controllers\ManagesController::class, 'update']);
+        Route::get('/{id}', [\App\Http\Controllers\ManagesController::class, 'show']);
+        Route::delete('/{id}', [\App\Http\Controllers\ManagesController::class, 'destroy']);
+    });
+   Route::prefix('schedules')->group(function () {
+        Route::get('', [ScheduleController::class, 'index']);
+        Route::post('/', [ScheduleController::class, 'store']);
+        Route::put('/{id}', [ScheduleController::class, 'update']);
+        Route::get('/{id}', [ScheduleController::class, 'show']);
+        Route::delete('/{id}', [ScheduleController::class, 'destroy']);
+    });
+Route::group(['prefix' => 'football'], function () {
+    Route::get('', [FootballPlayerController::class, 'index']);
+    Route::post('', [FootballPlayerController::class, 'store']);
+    Route::get('/show/{id}', [FootballPlayerController::class, 'show']);
+    Route::put('/update/{id}', [FootballPlayerController::class, 'update']);
+    Route::delete('/{id}', [FootballPlayerController::class, 'destroy']);
+});
 
 });
 
-Route::post('/register', [\App\Http\Controllers\UserController::class,'register']);
-Route::post('/login', [\App\Http\Controllers\UserController::class,'authenticate']);
+ 
 
-Route::group(['middleware' => ['jwt.verify']], function() {
-    Route::get('/user', [\App\Http\Controllers\UserController::class,'getAuthenticatedUser']);
 
-Route::prefix('manages')->group(function() {
-    Route::get('/', [\App\Http\Controllers\ManagesController::class, 'index']);
-    Route::post('/', [\App\Http\Controllers\ManagesController::class, 'store']);
-    Route::put('/{id}', [\App\Http\Controllers\ManagesController::class, 'update']);
-    Route::get('/{id}', [\App\Http\Controllers\ManagesController::class, 'show']);
-    Route::delete('/{id}', [\App\Http\Controllers\ManagesController::class, 'destroy']);
-
-});
-});

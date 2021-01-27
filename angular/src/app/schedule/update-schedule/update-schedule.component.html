@@ -13,17 +13,35 @@
 <div class="container">
   <form>
     <div class="form-group">
-      <label>Name</label>
+      <label>Giải Đấu</label>
       <input type="text" class="form-control" name="name" [(ngModel)]="schedule.name">
     </div>
     <div class="form-group">
-      <label>Day</label>
+      <label>Ngày Thi Đấu</label>
       <input type="date" class="form-control" name="day" [(ngModel)]="schedule.day">
     </div>
     <div class="form-group">
-      <label>Address</label>
+      <label>Địa Điểm Thi Đấu</label>
       <input type="text" class="form-control" name="address" [(ngModel)]="schedule.address">
     </div>
+
+    <div class="form-group">
+      <label>Trận Đấu</label>
+      <input type="text" class="form-control" name="match_1" [(ngModel)]="schedule.match_1">
+    </div>
+
+<!--    <div class="form-group">-->
+<!--      <label>Lich Sử Đối Đầu</label>-->
+<!--      <input type="text" class="form-control" name="history_1" [(ngModel)]="schedule.history_1">-->
+<!--    </div>-->
+
+    <div class="form-group">
+      <label>Lịch Sử Đối Đầu</label>
+      <textarea  class="form-control" name="history_1" cols="30" rows="10" [(ngModel)]="schedule.history_1"  required></textarea>
+
+    </div>
+
+
     <button  class="btn btn-warning" (click)="editSchedule()">Edit</button>
   </form>
 </div>

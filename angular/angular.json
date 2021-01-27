@@ -32,10 +32,12 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-             
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -133,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "angular"
+  "defaultProject": "angular",
+  "cli": {
+    "analytics": "31410263-dfc5-4b41-9789-70ae0fe16722"
+  }
 }

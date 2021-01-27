@@ -13,6 +13,8 @@ class Schedule extends Model
     protected $fillable = [
         'name',
         'day',
-        'address'
+        'address',
+        'match_1',
+        'history_1',
     ];
 }
