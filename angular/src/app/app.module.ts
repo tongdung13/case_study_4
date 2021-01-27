@@ -22,9 +22,11 @@ import { UpdateScheduleComponent } from './schedule/update-schedule/update-sched
 import { LoginComponent } from './login/login.component';
 
 import { NavbarComponent } from './navbar/navbar/navbar.component';
-import { DropzoneDirective } from './dropzone.directive';
-
-
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import {
+  AngularFireStorageModule,
+} from '@angular/fire/storage';
 
 
 @NgModule({
@@ -43,18 +45,18 @@ import { DropzoneDirective } from './dropzone.directive';
     UpdateScheduleComponent,
     LoginComponent,
     NavbarComponent,
-    DropzoneDirective,
-
-
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-    ],
-  providers: [],
+
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'cloud')
+  ],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

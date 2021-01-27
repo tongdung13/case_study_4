@@ -42,6 +42,7 @@ Route::group(['prefix' => 'football'], function () {
     Route::get('/show/{id}', [FootballPlayerController::class, 'show']);
     Route::put('/update/{id}', [FootballPlayerController::class, 'update']);
     Route::delete('/{id}', [FootballPlayerController::class, 'destroy']);
+    Route::post('/search/{name}', [FootballPlayerController::class, 'search']);
 });
 
 });

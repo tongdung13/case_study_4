@@ -43,4 +43,9 @@ export class FootballService {
   {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
+
+  getFootballByName(name: string)
+  {
+    return this.http.post(`${this.baseUrl}`, name);
+  }
 }

@@ -19,14 +19,6 @@ class FootballPlayerController extends Controller
     {
         $football = new FootballPlayer();
         $football->fill($request->all());
-
-        if($request->hasFile('image')) {
-
-            $image = $request->file('image');
-            $path  = $image->store('images', 'public');
-            $football->image = $path;
-        }
-
         $football->save();
         return response()->json($football);
     }
@@ -35,18 +27,6 @@ class FootballPlayerController extends Controller
     {
         $football = FootballPlayer::findOrFail($id);
         $football->fill($request->all());
-
-        if($request->hasFile('image')){
-            $cusrrenImg = $request->file('image');
-            if($cusrrenImg){
-                Storage::delete('/public/' . $cusrrenImg);
-            }
-
-            $image = $request->file('image');
-            $path  = $image->store('images', 'public');
-            $football->image = $path;
-        }
-
         $football->save();
         return response()->json($football);
     }
