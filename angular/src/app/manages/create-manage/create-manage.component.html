@@ -14,15 +14,18 @@
         <form>
             <div class="form-group">
 
-              <label>Tên Công Ty</label>
+              <label for="exampleFormControlInput1">Công ty quản lý</label>
               <input type="text" class="form-control" name="company_manage" [(ngModel)]="manage.company_manage">
             </div>
             <div class="form-group">
-              <label>Tên Quản Lý</label>
+              <label for="exampleFormControlInput1">Tên Đội Bóng</label>
               <input type="text" class="form-control" name="team_name" [(ngModel)]="manage.team_name">
             </div>
             <div class="form-group">
-              <label>Địa Chỉ Công Ty</label>
+              <label for="exampleFormControlInput1">Địa Chỉ</label>
+
+
+            
               <input type="text" class="form-control" name="address" [(ngModel)]="manage.address">
             </div>
             <button class="btn btn-warning" (click)="addManage()">Thêm Mới</button>

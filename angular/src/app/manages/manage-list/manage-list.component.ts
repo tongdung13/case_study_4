@@ -10,7 +10,7 @@ import { ManageService } from '../manage.service';
   styleUrls: ['./manage-list.component.scss']
 })
 export class ManageListComponent implements OnInit {
-manages!: any;
+ manages!: any;
   constructor(private manageService: ManageService, private router: Router) { }
 
   ngOnInit(): void {
