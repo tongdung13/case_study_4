@@ -10,6 +10,7 @@ import { FootballService } from '../football.service';
 export class FootballListComponent implements OnInit {
 
   footballs: any;
+  name!: string;
   constructor(private footballService: FootballService,
               private router: Router) { }
 
@@ -36,5 +37,9 @@ export class FootballListComponent implements OnInit {
     )
   }
 
-
+  getFootballByName()
+  {
+    console.log('here');
+    this.footballs = this.footballService.getFootballByName(this.name);
+  }
 }
