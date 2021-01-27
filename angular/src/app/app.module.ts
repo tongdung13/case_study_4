@@ -16,9 +16,11 @@ import {HttpClientModule} from '@angular/common/http';
 import { CreateScheduleComponent } from './schedule/create-schedule/create-schedule.component';
 import { UpdateScheduleComponent } from './schedule/update-schedule/update-schedule.component';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
-import { DropzoneDirective } from './dropzone.directive';
-
-
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import {
+  AngularFireStorageModule,
+} from "@angular/fire/storage";
 
 @NgModule({
   declarations: [
@@ -35,17 +37,17 @@ import { DropzoneDirective } from './dropzone.directive';
     CreateScheduleComponent,
     UpdateScheduleComponent,
     NavbarComponent,
-    DropzoneDirective,
-
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

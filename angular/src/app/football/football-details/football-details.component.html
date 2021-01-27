@@ -19,7 +19,8 @@
     <label><b>Tiểu Sử: </b></label> {{ football.story }}
   </div>
   <div>
-    <label><b>Hình Ảnh: </b></label> {{ football.image }}
+    <label><b>Hình Ảnh: </b></label> <img [src]="'assets/images/' + football.image" style="width: 300px; height: 300px;">
   </div>
   </div>
 </div>
+<button (click)="list()" class="btn btn-primary">Back</button><br>

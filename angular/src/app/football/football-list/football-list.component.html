@@ -1,4 +1,11 @@
 <div class="container">
+  <div class="panel-body">
+    <div class="row">
+        <input type="text" class="form-control col-md-8" placeholder="Search by title" [(ngModel)]="name" />
+        <button class="btn btn-outline-secondary col-md-1" (click)="getFootballByName()">
+            Search
+        </button>
+    </div>
   <table class="table">
     <thead>
       <tr>
@@ -18,9 +25,13 @@
         <td>{{ football.height }}</td>
         <td>{{ football.weight }}</td>
         <td>{{ football.address }}</td>
-        <td>{{ football.story }}</td>
+        <td>
+          <textarea name="story" cols="15" rows="2" [(ngModel)]="football.story"></textarea>
+        </td>
         <td>{{ football.gender }}</td>
-        <td>{{ football.image }}</td>
+        <td>
+          <img [src]="football.image" style="width: 100px;">
+        </td>
         <td>
           <a href="updateFootball/{{ football.id }}" class="btn btn-sm btn-primary">Sửa</a>
           <a href="showFootball/{{ football.id }}" class="btn btn-sm btn-success">Chi Tiết</a>
