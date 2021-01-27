@@ -67,4 +67,9 @@ class FootballPlayerController extends Controller
         return response()->json($football);
     }
 
+    public function search(Request $request)
+    {
+        $football = FootballPlayer::where('name', 'like', '%' .$request->name . '%')->get();
+        return response()->json($football, 200);
+    }
 }
