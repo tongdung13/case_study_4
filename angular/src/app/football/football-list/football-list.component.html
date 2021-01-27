@@ -13,8 +13,8 @@
         <th>Chiều Cao</th>
         <th>Cân Nặng</th>
         <th>Địa Chỉ</th>
-        <th>Tiểu Sử</th>
         <th>Giới Tính</th>
+        <th>Tiểu Sử</th>
         <th>Hình Ảnh</th>
         <th>Thao Tác</th>
       </tr>
@@ -25,17 +25,21 @@
         <td>{{ football.height }}</td>
         <td>{{ football.weight }}</td>
         <td>{{ football.address }}</td>
-        <td>
-          <textarea name="story" cols="15" rows="2" [(ngModel)]="football.story"></textarea>
-        </td>
         <td>{{ football.gender }}</td>
+
+        <td>
+          <textarea name="story" cols="15" rows="5" [(ngModel)]="football.story"></textarea>
+        </td>
+
         <td>
           <img [src]="football.image" style="width: 100px;">
         </td>
+
         <td>
-          <a href="updateFootball/{{ football.id }}" class="btn btn-sm btn-primary">Sửa</a>
-          <a href="showFootball/{{ football.id }}" class="btn btn-sm btn-success">Chi Tiết</a>
-          <button (click)="deleteFootball(football.id)" class="btn btn-sm btn-danger">Xóa</button>
+          <a href="updateFootball/{{ football.id }}"class="btn btn-warning">Sửa</a>
+          <button (click)="deleteFootball(football.id)" class="btn btn-danger">Xóa</button>
+          <a href="showFootball/{{ football.id }}" class="btn btn-success">Chi Tiết</a>
+
         </td>
       </tr>
     </tbody>

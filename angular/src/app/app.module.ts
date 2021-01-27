@@ -20,7 +20,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import {
   AngularFireStorageModule,
-} from "@angular/fire/storage";
+} from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import {
     FormsModule,
     HttpClientModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'cloud')
   ],
   providers: [
   ],
