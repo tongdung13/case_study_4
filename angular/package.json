@@ -27,6 +27,7 @@
     "filebase": "0.0.1",
     "firebase": "^8.2.4",
     "jquery": "^3.5.1",
+    "ngx-toastr": "^13.2.0",
     "popper.js": "^1.16.1",
     "rxjs": "~6.6.0",
     "sweetalert2": "^10.13.3",

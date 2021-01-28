@@ -10,17 +10,24 @@ import { UpdateFootballComponent } from './football/update-football/update-footb
 import { ManageListComponent } from './manages/manage-list/manage-list.component';
 import { CreateManageComponent } from './manages/create-manage/create-manage.component';
 import { UpdateManageComponent } from './manages/update-manage/update-manage.component';
-import {FormsModule} from '@angular/forms';
+
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { ScheduleListComponent } from './schedule/schedule-list/schedule-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateScheduleComponent } from './schedule/create-schedule/create-schedule.component';
 import { UpdateScheduleComponent } from './schedule/update-schedule/update-schedule.component';
+
+import { LoginComponent } from './login/login.component';
+
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import {
   AngularFireStorageModule,
 } from '@angular/fire/storage';
+
 
 @NgModule({
   declarations: [
@@ -36,8 +43,10 @@ import {
     ScheduleListComponent,
     CreateScheduleComponent,
     UpdateScheduleComponent,
+    LoginComponent,
     NavbarComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
