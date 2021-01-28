@@ -18,7 +18,7 @@ import { FootballDetailsComponent } from './football/football-details/football-d
 
 
 const routes: Routes = [
-  { path: '', component: ManageListComponent, pathMatch: 'full'},
+  { path: 'manage', component: ManageListComponent, pathMatch: 'full'},
   { path: 'manage/edit/:id', component: UpdateManageComponent},
   { path: 'add', component: CreateManageComponent},
   {path: 'schedules', component: ScheduleListComponent},

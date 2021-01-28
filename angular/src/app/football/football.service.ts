@@ -26,26 +26,66 @@ export class FootballService {
 
   createFootball(data: any)
   {
-    return this.http.post(`${this.baseUrl}`, data);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.post(`${this.baseUrl}`, data,{headers:reqHeader});
   }
 
   showFootball(id: number)
   {
-    return this.http.get(`${this.baseUrl}/show/${id}`);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`${this.baseUrl}/show/${id}`,{headers:reqHeader});
   }
 
   updateFootball(id: number, data: any)
   {
-    return this.http.put(`${this.baseUrl}/update/${id}`, data);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.put(`${this.baseUrl}/update/${id}`, data,{headers:reqHeader});
   }
 
   deleteFootball(id: number)
   {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.delete(`${this.baseUrl}/${id}`,{headers:reqHeader});
   }
 
   getFootballByName(name: string)
   {
-    return this.http.post(`${this.baseUrl}`, name);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.post(`${this.baseUrl}`, name,{headers:reqHeader});
   }
 }

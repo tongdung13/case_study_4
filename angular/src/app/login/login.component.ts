@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
-  
+
   email = '';
   password = '';
 
@@ -28,9 +28,9 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.email, this.password).subscribe(
       data => {
         localStorage.setItem('AccessToken',data.token)
-        this.router.navigate(['/'])
+        this.router.navigate(['manage'])
       },
       error => console.log(error));
   }
-  
+
 }

@@ -27,21 +27,53 @@ export class ManageService {
 
   // tslint:disable-next-line:typedef
   createManage(value: any){
-    return this.http.post(`${this.baseUrl}`, value);
+ var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.post(`${this.baseUrl}`, value, {headers:reqHeader });
   }
 
   // tslint:disable-next-line:typedef
   updateManage(id: number, value: any){
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.put(`${this.baseUrl}/${id}`, value,{headers:reqHeader } );
   }
 
   // tslint:disable-next-line:typedef
   getManage(id: number){
-    return this.http.get(`${this.baseUrl}/${id}`);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.get(`${this.baseUrl}/${id}`,{headers:reqHeader });
   }
 
   // tslint:disable-next-line:typedef
   deleteManage(id: number){
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    var auth_token = localStorage.getItem('AccessToken');
+    var reqHeader = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin' :'*',
+      'Access-Control-Allow-Methods' :'GET,POST,OPTIONS,DELETE,PUT',
+      // cu phap co dau cach dang sau Bearer
+      'Authorization': 'Bearer ' + auth_token
+    });
+    return this.http.delete(`${this.baseUrl}/${id}`,{headers:reqHeader });
   }
 }

@@ -25,7 +25,7 @@
       <td>{{manages.team_name}}</td>
       <td>{{manages.address}}</td>
 
-      <td><a class="btn btn-warning" routerLink="manage/edit/{{manages.id}}" routerLinkActive="active" >Sửa</a>
+      <td><a class="btn btn-warning" href="manage/edit/{{manages.id}}" routerLinkActive="active" >Sửa</a>
          <button (click)="deleteManage(manages.id)" class="btn btn-danger">Xóa</button></td>
 
     </tr>

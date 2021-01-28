@@ -23,7 +23,7 @@ manage!: any;
     this.manageService.createManage(this.manage).subscribe(
       data => {
         console.log(data);
-        this.router.navigate(['manages']);
+        this.router.navigate(['manage']);
         this.manage = new Manage();
       },
       error => {
